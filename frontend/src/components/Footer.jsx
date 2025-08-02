@@ -1,0 +1,1 @@
+const Footer = () => <footer>© Geo Green</footer>; export default Footer;

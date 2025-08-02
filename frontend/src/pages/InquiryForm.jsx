@@ -1,0 +1,1 @@
+const InquiryForm = () => <div>Inquiry Form</div>; export default InquiryForm;
