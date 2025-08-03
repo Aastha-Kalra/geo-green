@@ -27,11 +27,13 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("/api/products");
-        setProducts(response.data);
-        setFilteredProducts(response.data);
+        const response = await axios.get("http://localhost:5000/api/products");
+        setProducts(response.data || []);
+        setFilteredProducts(response.data || []);
       } catch (error) {
         console.error("Error fetching products:", error);
+        setProducts([]);
+        setFilteredProducts([]);
       } finally {
         setLoading(false);
       }
@@ -81,7 +83,7 @@ const Products = () => {
     filtered.sort((a, b) => {
       switch (sortBy) {
         case "name":
-          return a.name.localeCompare(b.name);
+          return a.name;
         case "price-low":
           return a.price - b.price;
         case "price-high":
@@ -216,9 +218,9 @@ const Products = () => {
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
+            {/* {filteredProducts.map((product) => (
               <ProductCard key={product._id} product={product} />
-            ))}
+            ))} */}
           </div>
         ) : (
           <div className="text-center py-12">
