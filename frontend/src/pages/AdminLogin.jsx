@@ -25,6 +25,8 @@ const AdminLogin = () => {
 
     try {
       const response = await axios.post("/api/admin/login", formData);
+      console.log(response,"response");
+      
       localStorage.setItem("adminToken", response.data.token);
       navigate("/dashboard");
     } catch (error) {

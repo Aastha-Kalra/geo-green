@@ -29,6 +29,49 @@ const ProductDetails = () => {
     window.location.href = `/inquiry/${id}`;
   };
 
+  // Calculate total price based on quantity
+  const calculateTotalPrice = () => {
+    if (!product || !product.price) return 0;
+    return product.price * quantity;
+  };
+
+  // Calculate price per unit
+  const getPricePerUnit = () => {
+    if (!product || !product.price) return 0;
+    return product.price;
+  };
+
+  // Get available quantity as number
+  const getAvailableQuantity = () => {
+    if (!product || !product.quantity) return 0;
+    return parseInt(product.quantity) || 0;
+  };
+
+  // Handle quantity increase
+  const handleQuantityIncrease = () => {
+    const available = getAvailableQuantity();
+    if (quantity < available) {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  // Handle quantity decrease
+  const handleQuantityDecrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  // Check if increase button should be disabled
+  const isIncreaseDisabled = () => {
+    return quantity >= getAvailableQuantity();
+  };
+
+  // Check if decrease button should be disabled
+  const isDecreaseDisabled = () => {
+    return quantity <= 1;
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -58,27 +101,27 @@ const ProductDetails = () => {
     );
   }
 
-  // Mock images for demonstration
-  const productImages = [
-    product.image || "/placeholder-product.jpg",
-    "/placeholder-product-2.jpg",
-    "/placeholder-product-3.jpg",
-    "/placeholder-product-4.jpg",
-  ];
+  // Use actual product images if available, otherwise fallback to placeholder
+  const productImages = product?.images && product?.images?.length > 0 
+    ? product?.images 
+    : product?.image 
+      ? [product?.image] 
+      : ["/placeholder-product.jpg"]; 
+
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="flex mb-8" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2">
+          <ol className="flex items-center">
             <li>
               <Link to="/" className="text-gray-500 hover:text-gray-700">
                 Home
               </Link>
             </li>
             <li>
-              <span className="text-gray-400 mx-2">/</span>
+              <span className="text-gray-400 mx-1">/</span>
             </li>
             <li>
               <Link
@@ -89,7 +132,7 @@ const ProductDetails = () => {
               </Link>
             </li>
             <li>
-              <span className="text-gray-400 mx-2">/</span>
+              <span className="text-gray-400 mx-1">/</span>
             </li>
             <li className="text-gray-900 font-medium">{product.name}</li>
           </ol>
@@ -108,23 +151,25 @@ const ProductDetails = () => {
               </div>
 
               {/* Thumbnail Images */}
-              <div className="grid grid-cols-4 gap-2">
-                {productImages.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedImage(index)}
-                    className={`aspect-w-1 aspect-h-1 rounded-md overflow-hidden ${
-                      selectedImage === index ? "ring-2 ring-green-500" : ""
-                    }`}
-                  >
-                    <img
-                      src={image}
-                      alt={`${product.name} ${index + 1}`}
-                      className="w-full h-20 object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
+              {productImages.length > 1 && (
+                <div className="grid grid-cols-4 gap-2">
+                  {productImages.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedImage(index)}
+                      className={`aspect-w-1 aspect-h-1 rounded-md overflow-hidden ${
+                        selectedImage === index ? "ring-2 ring-green-500" : ""
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`${product.name} ${index + 1}`}
+                        className="w-full h-20 object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -137,11 +182,6 @@ const ProductDetails = () => {
                   <span className="text-sm text-gray-500 uppercase tracking-wide">
                     {product.category}
                   </span>
-                  {product.offer && (
-                    <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {product.offer}
-                    </span>
-                  )}
                 </div>
 
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -164,93 +204,119 @@ const ProductDetails = () => {
                   <span className="text-gray-600 ml-2">(4.5/5)</span>
                 </div>
 
-                <div className="text-3xl font-bold text-green-600 mb-4">
-                  ₹{product.price}
+                {/* Dynamic Pricing Display */}
+                <div className="mb-4">
+                  <div className="text-3xl font-bold text-green-600">
+                    ₹{calculateTotalPrice()}
+                  </div>
+                  {quantity > 1 && (
+                    <div className="text-sm text-gray-500">
+                      ₹{getPricePerUnit()} per unit
+                    </div>
+                  )}
                 </div>
+
+                {/* Product Quantity Info */}
+                {product.quantity && (
+                  <div className="text-sm text-gray-600 mb-4">
+                    <span className="font-medium">Available:</span> {product.quantity}
+                  </div>
+                )}
               </div>
 
               {/* Product Description */}
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Description
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {product.description}
-                </p>
-              </div>
+              {product.description && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    Description
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
+              )}
 
-              {/* Key Features */}
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Key Features
-                </h3>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-gray-600">
-                    <svg
-                      className="w-5 h-5 text-green-500 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    High-quality formulation for maximum effectiveness
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg
-                      className="w-5 h-5 text-green-500 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Safe for crops and environment
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg
-                      className="w-5 h-5 text-green-500 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Easy to apply and use
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg
-                      className="w-5 h-5 text-green-500 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Long-lasting protection
-                  </li>
-                </ul>
-              </div>
+              {/* Additional Information */}
+              {product.additionalInfo && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    Additional Information
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {product.additionalInfo}
+                  </p>
+                </div>
+              )}
+
+              {/* How to Use */}
+              {product.howToUse && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    How to Use
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {product.howToUse}
+                  </p>
+                </div>
+              )}
+
+              {/* Key Benefits */}
+              {product.keyBenefits && product.keyBenefits.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    Key Benefits
+                  </h3>
+                  <ul className="space-y-2">
+                    {product.keyBenefits.map((benefit, index) => (
+                      <li key={index} className="flex items-center text-gray-600">
+                        <svg
+                          className="w-5 h-5 text-green-500 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Benefits */}
+              {product.benefits && product.benefits.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    Benefits
+                  </h3>
+                  <ul className="space-y-2">
+                    {product.benefits.map((benefit, index) => (
+                      <li key={index} className="flex items-center text-gray-600">
+                        <svg
+                          className="w-5 h-5 text-green-500 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {/* Quantity Selector */}
               <div className="mb-6">
@@ -259,8 +325,13 @@ const ProductDetails = () => {
                 </label>
                 <div className="flex items-center space-x-3">
                   <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
+                    onClick={handleQuantityDecrease}
+                    disabled={isDecreaseDisabled()}
+                    className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${
+                      isDecreaseDisabled() 
+                        ? 'border-gray-200 text-gray-300 cursor-not-allowed' 
+                        : 'border-gray-300 text-gray-600 hover:bg-gray-50'
+                    }`}
                   >
                     <svg
                       className="w-4 h-4"
@@ -280,8 +351,13 @@ const ProductDetails = () => {
                     {quantity}
                   </span>
                   <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
+                    onClick={handleQuantityIncrease}
+                    disabled={isIncreaseDisabled()}
+                    className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${
+                      isIncreaseDisabled() 
+                        ? 'border-gray-200 text-gray-300 cursor-not-allowed' 
+                        : 'border-gray-300 text-gray-600 hover:bg-gray-50'
+                    }`}
                   >
                     <svg
                       className="w-4 h-4"
@@ -298,6 +374,11 @@ const ProductDetails = () => {
                     </svg>
                   </button>
                 </div>
+                {getAvailableQuantity() > 0 && (
+                  <p className="text-sm text-gray-500 mt-2">
+                    Maximum quantity: {getAvailableQuantity()}
+                  </p>
+                )}
               </div>
 
               {/* Action Buttons */}
@@ -308,9 +389,7 @@ const ProductDetails = () => {
                 >
                   Inquire Now
                 </button>
-                <button className="w-full border-2 border-green-600 text-green-600 py-3 px-6 rounded-lg font-semibold hover:bg-green-50 transition-colors">
-                  Add to Wishlist
-                </button>
+                
               </div>
             </div>
           </div>
@@ -325,49 +404,44 @@ const ProductDetails = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Technical Details
+                  Product Details
                 </h3>
                 <div className="space-y-3">
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="text-gray-600">Active Ingredient</span>
-                    <span className="font-medium">N-P-K 20-20-20</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="text-gray-600">Formulation</span>
-                    <span className="font-medium">Water Soluble Powder</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="text-gray-600">Packaging</span>
-                    <span className="font-medium">1kg, 5kg, 25kg</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="text-gray-600">Shelf Life</span>
-                    <span className="font-medium">24 Months</span>
-                  </div>
+                  {product.category && (
+                    <div className="flex justify-between py-2 border-b border-gray-200">
+                      <span className="text-gray-600">Category</span>
+                      <span className="font-medium">{product.category}</span>
+                    </div>
+                  )}
+                  {product.quantity && (
+                    <div className="flex justify-between py-2 border-b border-gray-200">
+                      <span className="text-gray-600">Quantity</span>
+                      <span className="font-medium">{product.quantity}</span>
+                    </div>
+                  )}
+                  {product.price && (
+                    <div className="flex justify-between py-2 border-b border-gray-200">
+                      <span className="text-gray-600">Price per Unit</span>
+                      <span className="font-medium">₹{product.price}</span>
+                    </div>
+                  )}
                 </div>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Application
+                  Ingredients & Composition
                 </h3>
                 <div className="space-y-3">
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="text-gray-600">Dosage</span>
-                    <span className="font-medium">2-3g per liter</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="text-gray-600">Application Method</span>
-                    <span className="font-medium">Foliar Spray</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="text-gray-600">Frequency</span>
-                    <span className="font-medium">Every 15-20 days</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="text-gray-600">Compatible Crops</span>
-                    <span className="font-medium">All crops</span>
-                  </div>
+                  {product.ingredients && product.ingredients.length > 0 ? (
+                    product.ingredients.map((ingredient, index) => (
+                      <div key={index} className="flex">
+                        <span className="font-light">{ingredient}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="text-gray-500 italic">No ingredients information available</div>
+                  )}
                 </div>
               </div>
             </div>

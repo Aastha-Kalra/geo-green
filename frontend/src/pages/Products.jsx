@@ -27,7 +27,9 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get("/api/products");
+        console.log(response.data,"response.data");
+        
         setProducts(response.data || []);
         setFilteredProducts(response.data || []);
       } catch (error) {
@@ -218,9 +220,9 @@ const Products = () => {
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {/* {filteredProducts.map((product) => (
+            {filteredProducts.map((product) => (
               <ProductCard key={product._id} product={product} />
-            ))} */}
+            ))}
           </div>
         ) : (
           <div className="text-center py-12">

@@ -2,21 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  const { _id, name, description, price, image, category, offer } = product;
+  const { _id, name, description, price, category } = product;
+
+  console.log(product,"product");
+
+  const productImages = product.images && product.images.length > 0 
+    ? product.images 
+    : product.image 
+      ? [product.image] 
+      : ["/placeholder-product.jpg"];
 
   return (
     <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
       <div className="relative">
         <img
-          src={image || "/placeholder-product.jpg"}
+          src={productImages[0] || "/placeholder-product.jpg"}
           alt={name}
           className="w-full h-48 object-cover"
         />
-        {offer && (
-          <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-semibold">
-            {offer}
-          </div>
-        )}
       </div>
 
       <div className="p-4">
@@ -36,7 +39,7 @@ const ProductCard = ({ product }) => {
         <div className="flex gap-2">
           <Link
             to={`/product/${_id}`}
-            className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-center text-sm font-medium hover:bg-blue-700 transition-colors"
+            className="flex-1 text-center border-2 border-green-600 text-green-600 py-2 px-2 text-sm font-medium rounded-lg hover:bg-green-50 transition-colors"
           >
             View Details
           </Link>

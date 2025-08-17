@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../utils/axios";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -11,6 +11,13 @@ const AdminDashboard = () => {
     recentProducts: [],
   });
   const [loading, setLoading] = useState(true);
+  
+  const productImages = stats?.recentProducts[0]?.images && stats?.recentProducts[0]?.images?.length > 0 
+    ? stats?.recentProducts[0]?.images 
+    : stats?.recentProducts[0]?.image 
+      ? [stats?.recentProducts[0]?.image] 
+      : ["/placeholder-product.jpg"]; 
+
 
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
@@ -21,7 +28,7 @@ const AdminDashboard = () => {
 
     const fetchDashboardData = async () => {
       try {
-        const response = await axios.get("/api/admin/dashboard", {
+        const response = await api.get("/api/admin/dashboard", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStats(response.data);
@@ -170,7 +177,7 @@ const AdminDashboard = () => {
             Quick Actions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <button className="bg-green-600 text-white p-4 rounded-lg hover:bg-green-700 transition-colors">
+            <button onClick={() => navigate("/dashboard/products/new")} className="bg-green-600 text-white p-4 rounded-lg hover:bg-green-700 transition-colors">
               <div className="flex items-center">
                 <svg
                   className="w-5 h-5 mr-2"
@@ -188,7 +195,25 @@ const AdminDashboard = () => {
                 Add Product
               </div>
             </button>
-            <button className="bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 transition-colors">
+            <button onClick={() => navigate("/dashboard/products")} className="bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 transition-colors">
+              <div className="flex items-center">
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                  />
+                </svg>
+                Manage Products
+              </div>
+            </button>
+            <button onClick={() => navigate("/dashboard/orders")} className="bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 transition-colors">
               <div className="flex items-center">
                 <svg
                   className="w-5 h-5 mr-2"
@@ -206,7 +231,7 @@ const AdminDashboard = () => {
                 View Orders
               </div>
             </button>
-            <button className="bg-yellow-600 text-white p-4 rounded-lg hover:bg-yellow-700 transition-colors">
+            <button onClick={() => navigate("/dashboard/inquiries")} className="bg-yellow-600 text-white p-4 rounded-lg hover:bg-yellow-700 transition-colors">
               <div className="flex items-center">
                 <svg
                   className="w-5 h-5 mr-2"
@@ -224,30 +249,7 @@ const AdminDashboard = () => {
                 View Inquiries
               </div>
             </button>
-            <button className="bg-purple-600 text-white p-4 rounded-lg hover:bg-purple-700 transition-colors">
-              <div className="flex items-center">
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                Settings
-              </div>
-            </button>
+
           </div>
         </div>
 
@@ -284,7 +286,7 @@ const AdminDashboard = () => {
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <img
-                            src={product.image || "/placeholder-product.jpg"}
+                            src={productImages[0] || "/placeholder-product.jpg"}
                             alt={product.name}
                             className="w-10 h-10 rounded-lg object-cover mr-3"
                           />
@@ -310,12 +312,39 @@ const AdminDashboard = () => {
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <button className="text-green-600 hover:text-green-900 mr-3">
+                        <button
+                          onClick={() => navigate(`/dashboard/products/edit/${product._id}`)}
+                          className="text-blue-600 hover:text-blue-900 mr-3 px-2 py-1 rounded border border-blue-300 hover:bg-blue-50 transition-colors"
+                        >
                           Edit
                         </button>
-                        <button className="text-red-600 hover:text-red-900">
+                        <button
+                          onClick={async () => {
+                            if (window.confirm("Are you sure you want to delete this product?")) {
+                              try {
+                                const token = localStorage.getItem("adminToken");
+                                console.log(token,"token");
+                                await api.delete(`/api/products/${product._id}`, {
+                                  headers: { Authorization: `Bearer ${token}` },
+                                });
+
+                                // Remove deleted product from UI without reload
+                                setStats((prev) => ({
+                                  ...prev,
+                                  recentProducts: prev.recentProducts.filter((p) => p._id !== product._id),
+                                  totalProducts: prev.totalProducts - 1, // update stats count
+                                }));
+                              } catch (error) {
+                                console.error("Error deleting product:", error);
+                                alert("Failed to delete product");
+                              }
+                            }
+                          }}
+                          className="text-red-600 hover:text-red-900 px-2 py-1 rounded border border-red-300 hover:bg-red-50 transition-colors"
+                        >
                           Delete
                         </button>
+
                       </td>
                     </tr>
                   ))}

@@ -68,6 +68,12 @@ const InquiryForm = () => {
     }
   };
 
+  const productImages = product?.images && product?.images?.length > 0 
+    ? product?.images 
+    : product?.image 
+      ? [product?.image] 
+      : ["/placeholder-product.jpg"];
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -157,7 +163,7 @@ const InquiryForm = () => {
 
               <div className="flex items-start space-x-4 mb-6">
                 <img
-                  src={product.image || "/placeholder-product.jpg"}
+                  src={productImages[0] || "/placeholder-product.jpg"}
                   alt={product.name}
                   className="w-24 h-24 object-cover rounded-lg"
                 />
@@ -181,28 +187,7 @@ const InquiryForm = () => {
                 </p>
               </div>
 
-              {product.offer && (
-                <div className="mt-4 p-4 bg-red-50 rounded-lg">
-                  <div className="flex items-center">
-                    <svg
-                      className="w-5 h-5 text-red-500 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span className="text-red-700 font-medium">
-                      Special Offer: {product.offer}
-                    </span>
-                  </div>
-                </div>
-              )}
+
             </div>
           </div>
 

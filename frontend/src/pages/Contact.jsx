@@ -96,7 +96,8 @@ const Contact = () => {
                     <p className="text-gray-600">
                       123 Agriculture Street
                       <br />
-                      Mumbai, Maharashtra 400001
+                      Saharanpur, Uttar Pradesh, 247001
+
                       <br />
                       India
                     </p>
@@ -125,8 +126,6 @@ const Contact = () => {
                       Phone
                     </h3>
                     <p className="text-gray-600">
-                      +91 98765 43210
-                      <br />
                       +91 98765 43211
                     </p>
                   </div>
@@ -399,7 +398,7 @@ const Contact = () => {
                   Interactive map will be integrated here
                 </p>
                 <p className="text-sm text-gray-500 mt-2">
-                  123 Agriculture Street, Mumbai, Maharashtra 400001
+                  123 Agriculture Street, Saharanpur, Uttar Pradesh 247001
                 </p>
               </div>
             </div>

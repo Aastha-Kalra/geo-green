@@ -101,17 +101,17 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {categories.map((category, index) => (
+            {categories.map((category) => (
               <Link
-                key={index}
-                to={`/products?category=${category.name.toLowerCase()}`}
-                className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-300"
+                key={category.name}
+                to={`/products?category=${category.name}`}
+                className="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="text-4xl mb-3">{category.icon}</div>
-                <h3 className="font-semibold text-gray-900 mb-1">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {category.name}
                 </h3>
-                <p className="text-sm text-gray-500">
+                <p className="text-gray-600 text-sm">
                   {category.count} products
                 </p>
               </Link>
@@ -120,7 +120,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Featured Products Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -128,38 +128,43 @@ const Home = () => {
               Featured Products
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our most popular and highly-rated agricultural products trusted by
-              farmers nationwide.
+              Discover our most popular and highly-rated agricultural products
+              that farmers trust for their crops.
             </p>
           </div>
 
           {loading ? (
-            <div className="flex justify-center items-center py-12">
+            <div className="flex justify-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* {featuredProducts?.map((product) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredProducts.map((product) => (
                 <ProductCard key={product._id} product={product} />
-              ))} */}
+              ))}
             </div>
           )}
 
-          {!loading && featuredProducts.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-500">
-                No products available at the moment.
-              </p>
-            </div>
-          )}
-
-          {!loading && featuredProducts.length > 0 && (
-            <div className="text-center mt-12">
+          {products.length > 6 && (
+            <div className="text-center mt-8">
               <Link
                 to="/products"
-                className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors"
               >
                 View All Products
+                <svg
+                  className="ml-2 -mr-1 w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
               </Link>
             </div>
           )}

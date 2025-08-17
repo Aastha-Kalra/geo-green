@@ -8,9 +8,11 @@ import Contact from "./pages/Contact";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import InquiryForm from "./pages/InquiryForm";
+import AdminInquiries from "./pages/AdminInquiries";
+import AdminProductNew from "./pages/AdminProductNew";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import AdminProductEdit from './pages/AdminProductEdit';
 const App = () => (
   <Router>
     <Header />
@@ -22,6 +24,9 @@ const App = () => (
       <Route path="/contact" element={<Contact />} />
       <Route path="/admin" element={<AdminLogin />} />
       <Route path="/dashboard" element={<AdminDashboard />} />
+      <Route path="/dashboard/products/new" element={<AdminProductNew />} />
+      <Route path="/dashboard/inquiries" element={<AdminInquiries />} />
+      <Route path="/dashboard/products/edit/:id" element={<AdminProductEdit />} />
       <Route path="/inquiry/:id" element={<InquiryForm />} />
     </Routes>
     <Footer />
