@@ -62,7 +62,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className=" bg-green-800 text-white  bg-[url('v2.png')] bg-cover   ">
+      <section className=" bg-green-800 text-white  bg-[url('/v2.png')] bg-cover   ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -135,7 +135,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-white  bg-[url('v2.png')] bg-cover  ">
+      <section className="py-16 bg-white  bg-[url('/v2.png')] bg-cover  ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-green-50 rounded-lg p-8">
@@ -334,7 +334,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600 text-white bg-[url('e2.png')] bg-cover ">
+      <section className="py-16 bg-green-600 text-white bg-[url('/e2.png')] bg-cover ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Partner with Us?</h2>
           <p className="text-xl mb-8 text-green-100">
