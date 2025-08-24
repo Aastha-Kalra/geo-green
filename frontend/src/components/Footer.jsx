@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm"><img src="./v2.png" className="rounded-full"/></span>
+              <span className="text-white font-bold text-sm"><img src="/v2.png" className="rounded-full"/></span>
               </div>
               <span className="text-xl font-bold">Geo Green</span>
             </div>
