@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../utils/axios";
 
 const AdminInquiries = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const AdminInquiries = () => {
     if (!token) return navigate("/admin");
     const load = async () => {
       try {
-        const res = await axios.get(`/api/inquiries${statusFilter ? `?status=${statusFilter}` : ""}`, {
+        const res = await api.get(`/api/inquiries${statusFilter ? `?status=${statusFilter}` : ""}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setInquiries(res.data || []);
@@ -28,7 +28,7 @@ const AdminInquiries = () => {
 
   const updateStatus = async (id, status) => {
     const token = localStorage.getItem("adminToken");
-    await axios.patch(`/api/inquiries/${id}`, { status }, { headers: { Authorization: `Bearer ${token}` } });
+    await api.patch(`/api/inquiries/${id}`, { status }, { headers: { Authorization: `Bearer ${token}` } });
     setInquiries((prev) => prev.map((i) => (i._id === id ? { ...i, status } : i)));
   };
 

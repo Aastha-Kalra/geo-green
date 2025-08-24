@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import api from "../utils/axios";
 import ProductCard from "../components/ProductCard";
 import fallbackProducts from "../utils/Data";
 
@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("/api/products");
+        const response = await api.get("/api/products");
         const data = response.data;
 
         console.log(data,"fdddsdfsd");

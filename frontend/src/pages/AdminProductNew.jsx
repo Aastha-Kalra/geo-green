@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../utils/axios";
 
 const CATEGORIES = [
   "Powdered Vermicompost",
@@ -111,7 +111,7 @@ const AdminProductNew = () => {
         filesCount: files.length
       });
       
-      const response = await axios.post("/api/products", data, {
+      const response = await api.post("/api/products", data, {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

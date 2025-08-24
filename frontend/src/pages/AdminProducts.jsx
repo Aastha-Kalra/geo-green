@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../utils/axios";
 
 const AdminProducts = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const AdminProducts = () => {
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem("adminToken");
-      const response = await axios.get("/api/products", {
+      const response = await api.get("/api/products", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(response.data);
@@ -50,7 +50,7 @@ const AdminProducts = () => {
     setDeleteLoading(productId);
     try {
       const token = localStorage.getItem("adminToken");
-      await axios.delete(`/api/products/${productId}`, {
+      await api.delete(`/api/products/${productId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       
