@@ -137,7 +137,7 @@ const Home = () => {
       </section>
 
 
-      <section className="bg-[url('g3.avif')] bg-cover bg-center h-140 text-white flex items-center justify-center relative">
+      <section className="bg-[url('g3.avif')] bg-green-800 bg-cover bg-center h-140 text-white flex items-center justify-center relative">
 
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
