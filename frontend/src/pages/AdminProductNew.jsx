@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const CATEGORIES = [
-  "Fertilizers",
-  "Pesticides",
-  "Herbicides",
-  "Growth Promoters",
-  "Organic Products",
+  "Powdered Vermicompost",
+  "EarthWorms Vermicompost",
+  "Enriched Vermicompost",
+  "Organic Vermicompost"
 ];
 
 const AdminProductNew = () => {
@@ -145,14 +144,14 @@ const AdminProductNew = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">Add New Product</h1>
+        <h1 className="text-2xl font-bold text-gray-900 mb-6 animated-heading">Add New Vermicompost Product</h1>
         {error && (
           <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">{error}</div>
         )}
         <form onSubmit={onSubmit} className="space-y-6">
           {/* Basic Information */}
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Basic Information</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Basic Information</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Product Name *</label>
@@ -210,7 +209,7 @@ const AdminProductNew = () => {
 
           {/* Product Details */}
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Details</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Product Details</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
@@ -249,7 +248,7 @@ const AdminProductNew = () => {
 
           {/* Product Features */}
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Features</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Product Features</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -297,7 +296,7 @@ const AdminProductNew = () => {
 
           {/* Product Images */}
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Images</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Product Images</h3>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Upload Images</label>
               <input 

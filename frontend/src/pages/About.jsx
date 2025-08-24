@@ -62,7 +62,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-green-800 text-white">
+      <section className="bg-gradient-to-r from-green-600 to-green-800 text-white  bg-[url('v2.png')] bg-cover   ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -81,11 +81,11 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-green-800 mb-6">
                 Our Story
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Founded in 2010, Geo Green began with a simple mission: to
+                Founded in 2022, Geo Green began with a simple mission: to
                 provide farmers with high-quality agricultural products that not
                 only improve crop yields but also promote sustainable farming
                 practices.
@@ -106,25 +106,25 @@ const About = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 mb-2">
-                    5000+
+                    50+
                   </div>
                   <div className="text-gray-600">Happy Farmers</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 mb-2">
-                    50+
+                    10+
                   </div>
                   <div className="text-gray-600">Products</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 mb-2">
-                    15+
+                    2+
                   </div>
                   <div className="text-gray-600">Years Experience</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 mb-2">
-                    25+
+                    5+
                   </div>
                   <div className="text-gray-600">States Covered</div>
                 </div>
@@ -135,12 +135,12 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white  bg-[url('v2.png')] bg-cover  ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-green-50 rounded-lg p-8">
               <div className="text-4xl mb-4">🎯</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-green-800 mb-4">
                 Our Mission
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -151,7 +151,7 @@ const About = () => {
             </div>
             <div className="bg-green-50 rounded-lg p-8">
               <div className="text-4xl mb-4">🔮</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-green-800 mb-4">
                 Our Vision
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -168,7 +168,7 @@ const About = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-green-800 mb-4">
               Our Values
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -184,7 +184,7 @@ const About = () => {
                 className="bg-white rounded-lg shadow-md p-6 text-center"
               >
                 <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-green-800 mb-3">
                   {value.title}
                 </h3>
                 <p className="text-gray-600">{value.description}</p>
@@ -198,7 +198,7 @@ const About = () => {
       {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-green-800 mb-4">
               Meet Our Team
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -228,7 +228,7 @@ const About = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                <h3 className="text-lg font-semibold text-green-800 mb-1">
                   {member.name}
                 </h3>
                 <p className="text-green-600 font-medium mb-3">
@@ -245,7 +245,7 @@ const About = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-green-800 mb-4 italic">
               Why Choose Geo Green?
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -271,7 +271,7 @@ const About = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-green-800 mb-3">
                 Quality Assured
               </h3>
               <p className="text-gray-600">
@@ -296,7 +296,7 @@ const About = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-green-800 mb-3">
                 Expert Support
               </h3>
               <p className="text-gray-600">
@@ -321,7 +321,7 @@ const About = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-green-800 mb-3">
                 Competitive Pricing
               </h3>
               <p className="text-gray-600">
@@ -334,7 +334,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-16 bg-green-600 text-white bg-[url('e2.png')] bg-cover ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Partner with Us?</h2>
           <p className="text-xl mb-8 text-green-100">
@@ -355,6 +355,7 @@ const About = () => {
               Contact Us
             </a>
           </div>
+
         </div>
       </section>
     </div>
@@ -362,3 +363,4 @@ const About = () => {
 };
 
 export default About;
+

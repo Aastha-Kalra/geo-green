@@ -11,9 +11,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">GG</span>
+              <span className="text-white font-bold text-sm"><img src="./v2.png" className="rounded-full"/></span>
             </div>
-            <span className="text-xl font-bold text-gray-800">Geo Green</span>
+            <span className="text-xl font-bold text-green-800">Geo Green</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,14 +45,14 @@ const Header = () => {
           </nav>
 
           {/* Admin Link */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* <div className="hidden md:flex items-center space-x-4">
             <Link
               to="/admin"
               className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors"
             >
               Admin
             </Link>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -118,13 +118,13 @@ const Header = () => {
               >
                 Contact
               </Link>
-              <Link
+              {/* <Link
                 to="/admin"
                 className="bg-green-600 text-white block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Admin
-              </Link>
+              </Link> */}
             </div>
           </div>
         )}

@@ -40,3 +40,40 @@
 .read-the-docs {
   color: #888;
 }
+
+/* @keyframes heading-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animated-heading {
+  animation: heading-fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animated-heading-bounce {
+  animation: heading-fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) both, bounce 1.2s 1.1s 1;
+} */
+
+/* @keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+} */

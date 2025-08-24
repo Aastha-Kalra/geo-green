@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const { _id, name, description, price, category } = product;
 
-  console.log(product,"product");
-
   const productImages = product.images && product.images.length > 0 
     ? product.images 
     : product.image 
@@ -13,16 +11,16 @@ const ProductCard = ({ product }) => {
       : ["/placeholder-product.jpg"];
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden w-80 flex flex-col">
       <div className="relative">
         <img
-          src={productImages[0] || "/placeholder-product.jpg"}
+          src={productImages[0]}
           alt={name}
           className="w-full h-48 object-cover"
         />
       </div>
 
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             {category}
@@ -36,7 +34,10 @@ const ProductCard = ({ product }) => {
 
         <p className="text-gray-600 text-sm mb-4 line-clamp-3">{description}</p>
 
-        <div className="flex gap-2">
+        {/* Spacer to push buttons down */}
+        <div className="flex-grow"></div>
+
+        <div className="flex gap-2 mt-4">
           <Link
             to={`/product/${_id}`}
             className="flex-1 text-center border-2 border-green-600 text-green-600 py-2 px-2 text-sm font-medium rounded-lg hover:bg-green-50 transition-colors"

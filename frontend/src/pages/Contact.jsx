@@ -47,8 +47,8 @@ const Contact = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Contact Us</h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+          <h1 className="text-3xl font-bold text-green-800 mb-2 ">Contact Us</h1>
           <p className="text-gray-600">
             Get in touch with our team for any inquiries about our products or
             services
@@ -61,7 +61,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div>
             <div className="bg-white rounded-lg shadow-md p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-green-800 mb-6">
                 Get in Touch
               </h2>
 
@@ -90,11 +90,12 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-green-800 mb-1">
                       Our Office
                     </h3>
                     <p className="text-gray-600">
-                      123 Agriculture Street
+                    Shop No. 51, Village Sargathalbala, Sabdalpur, Nakud Road, Manak Mau,
+
                       <br />
                       Saharanpur, Uttar Pradesh, 247001
 
@@ -122,11 +123,11 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-green-800 mb-1">
                       Phone
                     </h3>
                     <p className="text-gray-600">
-                      +91 98765 43211
+                      +91 9557269501
                     </p>
                   </div>
                 </div>
@@ -149,7 +150,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-green-800 mb-1">
                       Email
                     </h3>
                     <p className="text-gray-600">
@@ -178,7 +179,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-green-800 mb-1">
                       Business Hours
                     </h3>
                     <p className="text-gray-600">
@@ -193,8 +194,8 @@ const Contact = () => {
               </div>
 
               {/* Social Media */}
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              {/* <div className="mt-8 pt-8 border-t border-gray-200">
+                <h3 className="text-lg font-semibold text-green-800 mb-4">
                   Follow Us
                 </h3>
                 <div className="flex space-x-4">
@@ -235,14 +236,14 @@ const Contact = () => {
                     </svg>
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
           {/* Contact Form */}
           <div>
             <div className="bg-white rounded-lg shadow-md p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-green-800 mb-6">
                 Send us a Message
               </h2>
 
@@ -370,9 +371,9 @@ const Contact = () => {
         </div>
 
         {/* Map Section */}
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Us</h2>
+            <h2 className="text-2xl font-bold text-green-800 mb-6">Find Us</h2>
             <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <svg
@@ -398,12 +399,12 @@ const Contact = () => {
                   Interactive map will be integrated here
                 </p>
                 <p className="text-sm text-gray-500 mt-2">
-                  123 Agriculture Street, Saharanpur, Uttar Pradesh 247001
+                Shop No. 51, Village Sargathalbala, Sabdalpur, Nakud Road, Manak Mau, Saharanpur-247001, Uttar Pradesh, India
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

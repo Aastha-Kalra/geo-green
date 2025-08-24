@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
+import fallbackProducts from '../utils/Data';
+
+
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -16,33 +19,40 @@ const Products = () => {
   const [sortBy, setSortBy] = useState("name");
 
   const categories = [
-    "All Categories",
-    "Fertilizers",
-    "Pesticides",
-    "Herbicides",
-    "Growth Promoters",
-    "Organic Products",
+  "All Categories",
+  "Powdered Vermicompost",
+  "EarthWorms Vermicompost",
+  "Enriched Vermicompost",
+  "Organic Vermicompost"
+
   ];
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get("/api/products");
-        console.log(response.data,"response.data");
-        
-        setProducts(response.data || []);
-        setFilteredProducts(response.data || []);
+        const data = response.data;
+  
+        if (data && data.length > 0) {
+          setProducts(data);
+          setFilteredProducts(data);
+        } else {
+          console.warn("No products found from backend. Using fallback data.");
+          setProducts(fallbackProducts);
+          setFilteredProducts(fallbackProducts);
+        }
       } catch (error) {
         console.error("Error fetching products:", error);
-        setProducts([]);
-        setFilteredProducts([]);
+        setProducts(fallbackProducts);
+        setFilteredProducts(fallbackProducts);
       } finally {
         setLoading(false);
       }
     };
-
+  
     fetchProducts();
   }, []);
+  
 
   // Apply filters and search
   useEffect(() => {
@@ -119,8 +129,8 @@ const Products = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
+          <h1 className="text-3xl font-bold text-green-800 mb-2">
             Our Products
           </h1>
           <p className="text-gray-600">
@@ -130,7 +140,7 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-60">
         {/* Filters Section */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -219,7 +229,7 @@ const Products = () => {
 
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-52">
             {filteredProducts.map((product) => (
               <ProductCard key={product._id} product={product} />
             ))}
@@ -241,7 +251,7 @@ const Products = () => {
                 />
               </svg>
             </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
+            <h3 className="text-lg font-medium text-green-800 mb-2">
               No products found
             </h3>
             <p className="text-gray-500 mb-4">
@@ -257,14 +267,14 @@ const Products = () => {
         )}
 
         {/* Load More Button (if needed) */}
-        {filteredProducts.length > 0 &&
+        {/* {filteredProducts.length > 0 &&
           filteredProducts.length < products.length && (
             <div className="text-center mt-8">
               <button className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
                 Load More Products
               </button>
             </div>
-          )}
+          )} */}
       </div>
     </div>
   );

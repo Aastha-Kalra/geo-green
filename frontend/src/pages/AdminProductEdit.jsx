@@ -3,11 +3,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import api from '../utils/axios';
 
 const CATEGORIES = [
-  "Fertilizers",
-  "Pesticides",
-  "Herbicides",
-  "Growth Promoters",
-  "Organic Products",
+  "Powdered Vermicompost",
+  "EarthWorms Vermicompost",
+  "Enriched Vermicompost",
+  "Organic Vermicompost"
 ];
 
 const AdminProductEdit = () => {
@@ -218,7 +217,7 @@ const AdminProductEdit = () => {
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">Edit Product</h1>
+          <h1 className="text-2xl font-bold text-gray-900 animated-heading">Edit Vermicompost Product</h1>
           <button
             onClick={() => navigate("/dashboard/products")}
             className="text-gray-600 hover:text-gray-900"
@@ -236,7 +235,7 @@ const AdminProductEdit = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Basic Information */}
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Basic Information</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Basic Information</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Product Name *</label>
@@ -293,7 +292,7 @@ const AdminProductEdit = () => {
 
           {/* Product Details */}
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Details</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Product Details</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
@@ -332,7 +331,7 @@ const AdminProductEdit = () => {
 
           {/* Product Features */}
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Features</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Product Features</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -381,7 +380,7 @@ const AdminProductEdit = () => {
           {/* Existing Images */}
           {existingImages.length > 0 && (
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Current Images</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Current Images</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {existingImages.map((image, index) => (
                   <div key={index} className="relative group">
@@ -405,7 +404,7 @@ const AdminProductEdit = () => {
 
           {/* New Images */}
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Add New Images</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 animated-heading">Add New Images</h3>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Upload New Images</label>
               <input 

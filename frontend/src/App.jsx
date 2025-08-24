@@ -13,6 +13,7 @@ import AdminProductNew from "./pages/AdminProductNew";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AdminProductEdit from './pages/AdminProductEdit';
+import AdminProducts from "./pages/AdminProducts";
 const App = () => (
   <Router>
     <Header />
@@ -27,6 +28,8 @@ const App = () => (
       <Route path="/dashboard/products/new" element={<AdminProductNew />} />
       <Route path="/dashboard/inquiries" element={<AdminInquiries />} />
       <Route path="/dashboard/products/edit/:id" element={<AdminProductEdit />} />
+      <Route path="/dashboard/products" element={<AdminProducts />} />
+
       <Route path="/inquiry/:id" element={<InquiryForm />} />
     </Routes>
     <Footer />

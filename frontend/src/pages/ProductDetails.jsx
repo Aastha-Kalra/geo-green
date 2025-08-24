@@ -184,7 +184,7 @@ const ProductDetails = () => {
                   </span>
                 </div>
 
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                <h1 className="text-3xl font-bold text-gray-900 mb-2 animated-heading">
                   {product.name}
                 </h1>
 
@@ -227,7 +227,7 @@ const ProductDetails = () => {
               {/* Product Description */}
               {product.description && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 animated-heading">
                     Description
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -239,7 +239,7 @@ const ProductDetails = () => {
               {/* Additional Information */}
               {product.additionalInfo && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 animated-heading">
                     Additional Information
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -251,7 +251,7 @@ const ProductDetails = () => {
               {/* How to Use */}
               {product.howToUse && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 animated-heading">
                     How to Use
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -263,7 +263,7 @@ const ProductDetails = () => {
               {/* Key Benefits */}
               {product.keyBenefits && product.keyBenefits.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 animated-heading">
                     Key Benefits
                   </h3>
                   <ul className="space-y-2">
@@ -292,7 +292,7 @@ const ProductDetails = () => {
               {/* Benefits */}
               {product.benefits && product.benefits.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 animated-heading">
                     Benefits
                   </h3>
                   <ul className="space-y-2">
@@ -376,7 +376,7 @@ const ProductDetails = () => {
                 </div>
                 {getAvailableQuantity() > 0 && (
                   <p className="text-sm text-gray-500 mt-2">
-                    Maximum quantity: {getAvailableQuantity()}
+                    Maximum quantity: {getAvailableQuantity()} KG
                   </p>
                 )}
               </div>
@@ -398,12 +398,12 @@ const ProductDetails = () => {
         {/* Product Specifications */}
         <div className="mt-12">
           <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Product Specifications
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 animated-heading">
+              Vermicompost Product Specifications
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 animated-heading">
                   Product Details
                 </h3>
                 <div className="space-y-3">
@@ -429,7 +429,7 @@ const ProductDetails = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 animated-heading">
                   Ingredients & Composition
                 </h3>
                 <div className="space-y-3">
