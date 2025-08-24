@@ -143,7 +143,7 @@ const Home = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-          <h2 className="text-7xl font-semibold mb-4 text-center leading-tight">
+          <h2 className=" text-2xl lg:text-7xl font-semibold mb-4 text-center leading-tight">
             Enrich your soil, boost crop yields, and fight plant diseases naturally with vermicompost.      </h2>
 
         </div>
@@ -162,8 +162,8 @@ const Home = () => {
         </div>
 
         {/* Right Side - Text Content */}
-        <div className="md:w-1/2 w-full bg-green-700  h-138 text-white text-center p-10">
-          <h2 className="text-6xl font-semibold mb-4 opacity-90 italic">What is Vermicompost?</h2>
+        <div className="md:w-1/2 w-full bg-green-800 md:h-138 h-auto text-white text-center p-10">
+          <h2 className="lg:text-6xl text-xl font-semibold mb-4 opacity-90 italic">What is Vermicompost?</h2>
           <p className="text-lg leading-relaxed opacity-90 mt-12">
             Vermicompost is a nutrient-rich organic fertilizer and soil conditioner
             produced through the breakdown of organic matter by earthworms. It improves
@@ -180,7 +180,7 @@ const Home = () => {
           <div className="text-center mb-12 text-green-900">
             <h3 className="text-xl font-semibold mb-4">
               Our Latest Applications</h3>
-            <h1 className="text-5xl font-bold mb-4 italic">Recently Added Products</h1>
+            <h1 className="lg:text-5xl text-2xl font-bold mb-4 italic">Recently Added Products</h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Discover our most popular and highly-rated agricultural products
               that farmers trust for their crops.
