@@ -137,14 +137,14 @@ const Home = () => {
       </section>
 
 
-      <section className="bg-[url('/g3.avif')] bg-green-800 bg-cover bg-center h-140 text-white flex items-center justify-center relative">
+      <section className="bg-[url('/geo.png')] bg-green-800 bg-cover bg-center h-140 text-white flex items-center justify-center relative">
 
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-          <h2 className=" text-2xl lg:text-7xl font-semibold mb-4 text-center leading-tight">
-            Enrich your soil, boost crop yields, and fight plant diseases naturally with vermicompost.      </h2>
+          <h2 className=" text-3xl lg:text-7xl font-semibold mb-4 text-center leading-tight">
+            Enrich your soil, boost crop yields, and fight plant diseases naturally with vermicompost.  </h2>
 
         </div>
 
