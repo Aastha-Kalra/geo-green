@@ -63,6 +63,70 @@ const fallbackProducts = [
         "v2.jpg"
       ],
       updatedAt: "2025-08-24T12:30:00.000+00:00"
+    },
+    {
+      "_id": "68a1f3578b99c387924e24cd",
+      "name": "25 Kg Enriched Vermicompost with Neem Powder",
+      "category": "Fertilizers",
+      "price": 6,
+      "quantity": "25kg",
+      "description": "This 25 kg bag of enriched powdered vermicompost combines the benefits of high-quality earthworm compost with the natural pest-repellent properties of neem powder. Ideal for organic farming, it not only nourishes plants but also helps protect against soil-borne pests and diseases.",
+      "additionalInfo": "Packed in a moisture-resistant, eco-friendly bag. Store in a cool, dry place away from direct sunlight.",
+      "howToUse": "Apply 500g–1kg per plant base or mix with potting soil at 10–20% ratio. Water after application for best results.",
+      "ingredients": [
+        "Organic vermicompost",
+        "Neem powder",
+        "Earthworm castings",
+        "Nitrogen",
+        "Phosphorus",
+        "Potassium"
+      ],
+      "benefits": [
+        "Enhances plant immunity",
+        "Repels soil-borne pests naturally",
+        "Improves soil aeration and water retention"
+      ],
+      "keyBenefits": [
+        "Dual-action fertilizer and pest control",
+        "Completely organic and chemical-free",
+        "Suitable for indoor and outdoor use"
+      ],
+      "images": [
+        "p3.jpg",
+        "p3-2.jpg"
+      ],
+      "updatedAt": "2025-08-27T10:00:00.000+00:00"
+    },
+    {
+      "_id": "68a1f3578b99c387924e24ce",
+      "name": "10 Kg Vermicompost Powder with Biochar Blend",
+      "category": "Fertilizers",
+      "price": 8,
+      "quantity": "10kg",
+      "description": "This 10 kg powdered blend of vermicompost and biochar is designed to boost soil microbial life, increase water retention, and significantly enhance nutrient availability. Ideal for raised beds, pots, and kitchen gardens.",
+      "additionalInfo": "Delivered in a resealable, heavy-duty bag for freshness and reuse. Store in a dry place.",
+      "howToUse": "Mix directly into soil or apply as a top layer around plants. Use 1–1.5 kg per square meter.",
+      "ingredients": [
+        "Vermicompost powder",
+        "Activated biochar",
+        "Earthworm castings",
+        "Essential micronutrients"
+      ],
+      "benefits": [
+        "Increases nutrient holding capacity",
+        "Supports beneficial soil microbes",
+        "Improves drought resistance"
+      ],
+      "keyBenefits": [
+        "Biochar-enhanced formula",
+        "Boosts soil structure",
+        "Perfect for organic gardening"
+      ],
+      "images": [
+        "p4.jpg",
+        "p4-2.jpg"
+      ],
+      "updatedAt": "2025-08-27T10:15:00.000+00:00"
     }
   ];
 

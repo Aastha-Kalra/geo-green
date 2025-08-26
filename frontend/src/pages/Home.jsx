@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../utils/axios";
 import ProductCard from "../components/ProductCard";
 import fallbackProducts from "../utils/Data";
+import ImageGridSlider from "../components/Slider";
 
 
 const Home = () => {
@@ -14,10 +15,6 @@ const Home = () => {
       try {
         const response = await api.get("/api/products");
         const data = response.data;
-
-        console.log(data,"fdddsdfsd");
-        
-  
         if (data && data.length > 0) {
           setProducts(data);
         } else {
@@ -31,10 +28,10 @@ const Home = () => {
         setLoading(false);
       }
     };
-  
+
     fetchProducts();
   }, []);
-  
+
 
   const categories = [
     { name: "Powdered Vermicompost", icon: "🌱", count: 12 },
@@ -192,11 +189,12 @@ const Home = () => {
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center w-full">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
+          </div>
+          
           )}
 
           {products.length > 6 && (
@@ -225,8 +223,44 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+
+      {/* nursery section */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-green-800 italic mb-4">
+              Our Nursery
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore glimpses of our nursery where we grow organic and natural products
+              with care and dedication.
+            </p>
+          </div>
+
+          {/* Slider Component */}
+          <div className="w-full max-w-8xl overflow-hidden">
+            <ImageGridSlider
+              images={[
+                "/n1.png",
+                "/n8.jpg",
+                "/n3.png",
+                "/n7.jpg",
+                "/n4.png",
+                "/n10.jpg",
+                "/n6.jpg",
+                "/n11.png",
+                "/n5.jpg",
+                "/n2.png",
+
+              ]}
+            />
+
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-gray-50 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-green-800  italic mb-4">
@@ -318,7 +352,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600 text-white bg-[url('/g5.png')] bg-cover">
+      <section className="py-16 bg-green-600 text-white bg-[url('/g5.png')] bg-cover ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center ">
           <h2 className="text-3xl font-bold mb-4 italic">
             Ready to Boost Your Yield?
