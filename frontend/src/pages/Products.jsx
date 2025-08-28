@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import api from "../utils/axios";
 import ProductCard from "../components/ProductCard";
 import fallbackProducts from '../utils/Data';
+import { Helmet } from "@dr.pogodin/react-helmet";
 
 
 
@@ -126,7 +127,34 @@ const Products = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+           <Helmet>
+        <title>Products - Geo Green Nursery Vermicompost & Plants in Saharanpur</title>
+        <meta 
+          name="description" 
+          content="Explore Geo Green Nursery products: organic vermicompost, fertilizers, and a wide variety of plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." 
+        />
+        <meta 
+          name="keywords" 
+          content="vermicompost, organic fertilizer, indoor plants, outdoor plants, Phoenix plant, Ficus plant, Botalpam plant, Benjamina plant, Geo Green Nursery products, nursery in Saharanpur" 
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Products - Geo Green Nursery Vermicompost & Plants in Saharanpur" />
+        <meta property="og:description" content="Organic vermicompost, fertilizers, and plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.geogreennursery.com/products" />
+        <meta property="og:image" content="https://www.geogreennursery.com/images/products-og-image.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Products - Geo Green Nursery Vermicompost & Plants in Saharanpur" />
+        <meta name="twitter:description" content="Organic vermicompost, fertilizers, and plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." />
+        <meta name="twitter:image" content="https://www.geogreennursery.com/images/products-og-image.jpg" />
+      </Helmet>
+    
+
+      <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
@@ -229,7 +257,7 @@ const Products = () => {
 
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-52">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-52 md:gap-10">
             {filteredProducts.map((product) => (
               <ProductCard key={product._id} product={product} />
             ))}
@@ -277,6 +305,9 @@ const Products = () => {
           )} */}
       </div>
     </div>
+    
+    </>
+    
   );
 };
 

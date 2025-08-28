@@ -1,36 +1,7 @@
+import { Helmet } from "@dr.pogodin/react-helmet";
 import React from "react";
 
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Rajesh Kumar",
-      position: "CEO & Founder",
-      image: "/team-1.jpg",
-      description:
-        "Agricultural expert with 15+ years of experience in agrochemical industry.",
-    },
-    {
-      name: "Priya Sharma",
-      position: "Head of Operations",
-      image: "/team-2.jpg",
-      description:
-        "Specializes in supply chain management and quality control.",
-    },
-    {
-      name: "Amit Patel",
-      position: "Technical Director",
-      image: "/team-3.jpg",
-      description:
-        "PhD in Agricultural Sciences with expertise in product development.",
-    },
-    {
-      name: "Sneha Reddy",
-      position: "Sales Manager",
-      image: "/team-4.jpg",
-      description:
-        "Experienced in building strong relationships with farmers and distributors.",
-    },
-  ];
 
   const values = [
     {
@@ -60,7 +31,33 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <Helmet>
+        <title>About Geo Green Nursery - Saharanpur</title>
+        <meta 
+          name="description" 
+          content="Geo Green Nursery in Saharanpur specializes in organic vermicompost and diverse plant varieties. Learn more about our commitment to healthy plants and eco-friendly gardening." 
+        />
+        <meta 
+          name="keywords" 
+          content="Geo Green Nursery, Saharanpur nursery, vermicompost, organic fertilizer, indoor plants, outdoor plants, Phoenix plant, Ficus plant, Botalpam plant, Benjamina plant, eco-friendly gardening" 
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="About Geo Green Nursery - Saharanpur" />
+        <meta property="og:description" content="Learn about Geo Green Nursery, Saharanpur: organic vermicompost, indoor & outdoor plants, and eco-friendly gardening." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.geogreennursery.com/about" />
+        <meta property="og:image" content="https://www.geogreennursery.com/images/about-og-image.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Geo Green Nursery - Saharanpur" />
+        <meta name="twitter:description" content="Learn about Geo Green Nursery, Saharanpur: organic vermicompost, indoor & outdoor plants, and eco-friendly gardening." />
+        <meta name="twitter:image" content="https://www.geogreennursery.com/images/about-og-image.jpg" />
+      </Helmet>
+
+      <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className=" bg-green-800 text-white  bg-[url('/v2.png')] bg-cover   ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -359,6 +356,10 @@ const About = () => {
         </div>
       </section>
     </div>
+    
+    
+    </>
+    
   );
 };
 

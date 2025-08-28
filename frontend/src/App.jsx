@@ -14,7 +14,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AdminProductEdit from './pages/AdminProductEdit';
 import AdminProducts from "./pages/AdminProducts";
+import { HelmetProvider } from "@dr.pogodin/react-helmet";
 const App = () => (
+  <HelmetProvider>
   <Router>
     <Header />
     <Routes>
@@ -34,6 +36,7 @@ const App = () => (
     </Routes>
     <Footer />
   </Router>
+  </HelmetProvider>
 );
 
 export default App;
