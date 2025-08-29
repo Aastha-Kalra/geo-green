@@ -75,29 +75,27 @@ const Home = () => {
 
       <div className="min-h-screen ">
         {/* Hero Section */}
-        <section className="relative  bg-center h-150 text-white">
-
-          <div className="absolute inset-0  bg-green-900 md:min-h-screen min-h-screen"></div>
+        <section className="relative bg-center text-white">
+          <div className="absolute top-0 left-0 w-full h-full bg-green-900 md:min-h-screen"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-
-            <div className=" lg:hidden flex justify-center items-center h-52">
+            <div className="lg:hidden flex justify-center items-center h-52">
               <img src="samir (1).png" className="h-52 rounded-xl " />
             </div>
 
-
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center  mt-10 md:mt-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-10 md:mt-0">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                  Welcome to Geo Green Nursery  </h1>
-                <p className="text-xl mb-8 text-green-100">
+                  Welcome to Geo Green Nursery
+                </h1>
+                <p className="text-xl mb-8 text-green-100 font-semibold">
                   The Best Plant Nursery in Saharanpur
                 </p>
                 <p className="text-xl mb-8 text-green-100">
                   At Geo Green, we provide premium vermicompost and a wide range of healthy, vibrant plants—bringing nature closer to your home.
                   Our organic solutions and curated nursery collection support stronger plant growth, natural sustainability,
-                  and a greener, more beautiful future.              </p>
+                  and a greener, more beautiful future.
+                </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     to="/products"
@@ -113,32 +111,14 @@ const Home = () => {
                   </Link>
                 </div>
               </div>
+
               <div className="hidden lg:flex justify-center items-center h-96">
                 <img src="samir (1).png" className="h-96 rounded-xl " />
-
-                {/* <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/20 rounded-lg p-4 text-center">
-                      <div className="text-3xl mb-2">🌱</div>
-                      <div className="font-semibold">Organic</div>
-                    </div>
-                    <div className="bg-white/20 rounded-lg p-4 text-center">
-                      <div className="text-3xl mb-2">🛡️</div>
-                      <div className="font-semibold">Safe</div>
-                    </div>
-                    <div className="bg-white/20 rounded-lg p-4 text-center">
-                      <div className="text-3xl mb-2">📈</div>
-                      <div className="font-semibold">Effective</div>
-                    </div>
-                    <div className="bg-white/20 rounded-lg p-4 text-center">
-                      <div className="text-3xl mb-2">🌿</div>
-                      <div className="font-semibold">Natural</div>
-                    </div>
-                  </div> */}
-
               </div>
             </div>
           </div>
         </section>
+
 
         {/* Categories Section */}
         <section className="py-24 bg-gray-50">
