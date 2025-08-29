@@ -48,13 +48,13 @@ const Contact = () => {
     <>
       <Helmet>
         <title>Contact Geo Green Nursery - Saharanpur</title>
-        <meta 
-          name="description" 
-          content="Get in touch with Geo Green Nursery in Saharanpur for organic vermicompost, plants, and gardening advice. We provide indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina plants." 
+        <meta
+          name="description"
+          content="Get in touch with Geo Green Nursery in Saharanpur for organic vermicompost, plants, and gardening advice. We provide indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina plants."
         />
-        <meta 
-          name="keywords" 
-          content="contact Geo Green Nursery, Saharanpur nursery, vermicompost, indoor plants, outdoor plants, Phoenix plant, Ficus plant, Botalpam plant, Benjamina plant, gardening advice" 
+        <meta
+          name="keywords"
+          content="contact Geo Green Nursery, Saharanpur nursery, vermicompost, indoor plants, outdoor plants, Phoenix plant, Ficus plant, Botalpam plant, Benjamina plant, gardening advice"
         />
 
         {/* Open Graph */}
@@ -70,11 +70,11 @@ const Contact = () => {
         <meta name="twitter:description" content="Reach Geo Green Nursery in Saharanpur for organic vermicompost, plants, and gardening advice." />
         <meta name="twitter:image" content="https://www.geogreennursery.com/images/contact-og-image.jpg" />
       </Helmet>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 roboto">
         {/* Header */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-            <h1 className="text-3xl font-bold text-green-800 mb-2 ">Contact Us</h1>
+            <h1 className="text-3xl font-bold text-green-800 mb-2 animate-bounce">Contact Us</h1>
             <p className="text-gray-600">
               Get in touch with our team for any inquiries about our products or
               services
@@ -154,6 +154,8 @@ const Contact = () => {
                       </h3>
                       <p className="text-gray-600">
                         +91 9557269501
+                        <br />
+                        +91 8439897348
                       </p>
                     </div>
                   </div>

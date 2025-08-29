@@ -5,6 +5,7 @@ import ProductCard from "../components/ProductCard";
 import fallbackProducts from "../utils/Data";
 import ImageGridSlider from "../components/Slider";
 import { Helmet } from "@dr.pogodin/react-helmet";
+import { ReactTyped, Typed } from "react-typed";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -73,7 +74,7 @@ const Home = () => {
         <meta name="twitter:image" content="https://www.geogreennursery.com/images/home-og-image.jpg" />
       </Helmet>
 
-      <div className="min-h-screen ">
+      <div className="min-h-screen roboto">
         {/* Hero Section */}
         <section className="relative bg-center text-white">
           <div className="absolute top-0 left-0 w-full h-full bg-green-900 md:min-h-screen"></div>
@@ -84,13 +85,29 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-10 md:mt-0">
-              <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                  Welcome to Geo Green Nursery
+              <div className="flex flex-col items-center justify-center text-center py-10 roboto  ">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                  <ReactTyped
+                    strings={["Welcome to Geo Green Nursery"]}
+                    typeSpeed={50}
+                    showCursor={false}
+                  />
                 </h1>
-                <p className="text-xl mb-8 text-green-100 font-semibold">
-                  The Best Plant Nursery in Saharanpur
+
+                <p className="text-xl mb-8 text-green-600 font-semibold">
+                  <ReactTyped
+                    strings={[
+                      "The Best Plant Nursery in Saharanpur",
+                      "Eco-friendly Plants Vermicompost",
+                      "Indoor Outdoor Plant Collection"
+                    ]}
+                    typeSpeed={90}
+                    backSpeed={30}
+                    loop
+                  />
                 </p>
+
+
                 <p className="text-xl mb-8 text-green-100">
                   At Geo Green, we provide premium vermicompost and a wide range of healthy, vibrant plants—bringing nature closer to your home.
                   Our organic solutions and curated nursery collection support stronger plant growth, natural sustainability,
@@ -124,8 +141,8 @@ const Home = () => {
         <section className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[url('/g2.jpeg')] bg-cover bg-center py-12" >
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-green-900 mb-4 italic">
-                We Deals In
+              <h2 className="text-3xl font-bold text-green-900 mb-4 italic font ">
+                We <span className="blink">Deals In</span>
               </h2>
               <p className="text-green-900 max-w-2xl mx-auto">
                 Explore our comprehensive range of agricultural products designed
@@ -160,7 +177,7 @@ const Home = () => {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-            <h2 className=" text-3xl lg:text-7xl font-semibold mb-4 text-center leading-tight">
+            <h2 className=" text-3xl lg:text-7xl font-semibold mb-4 text-center leading-tight font">
               Enrich your soil, boost crop yields, and fight plant diseases naturally with vermicompost.  </h2>
 
           </div>
@@ -179,8 +196,8 @@ const Home = () => {
           </div>
 
           {/* Right Side - Text Content */}
-          <div className="md:w-1/2 w-full bg-green-800 md:h-138 h-auto text-white text-center p-10">
-            <h2 className="lg:text-6xl text-xl font-semibold mb-4 opacity-90 italic">What is Vermicompost?</h2>
+          <div className="md:w-1/2 w-full bg-green-800 md:h-138 h-auto text-white text-center p-7">
+            <h2 className="lg:text-6xl text-xl font-semibold mb-4 opacity-90 italic font">What is Vermicompost?</h2>
             <p className="text-lg leading-relaxed opacity-90 mt-12">
               Vermicompost is a nutrient-rich organic fertilizer and soil conditioner
               produced through the breakdown of organic matter by earthworms. It improves
@@ -195,9 +212,9 @@ const Home = () => {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 text-green-900">
-              <h3 className="text-xl font-semibold mb-4">
-                Our Latest Applications</h3>
-              <h1 className="lg:text-5xl text-2xl font-bold mb-4 italic">Recently Added Products</h1>
+              <h3 className="text-2xl font-semibold mb-4 font">
+                Our <span className="blink ">Latest Applications</span></h3>
+              <h1 className="lg:text-8xl text-3xl font-bold mb-4 italic font">Recently Added Products</h1>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Discover our most popular and highly-rated agricultural products
                 that farmers trust for their crops.
@@ -248,7 +265,7 @@ const Home = () => {
         <section className="py-16 bg-gray-50 w-full">
           <div className=" mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-green-800 italic mb-4">
+              <h2 className="text-6xl font-bold text-green-800 italic mb-4 animate-bounce font">
                 Our Nursery
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
@@ -289,8 +306,8 @@ const Home = () => {
         <section className="py-24 bg-gray-50 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-green-800  italic mb-4">
-                Why Choose Geo Green?
+              <h2 className="text-5xl font-bold text-green-800  italic mb-4 font">
+                Why Choose<span className="blink"> Geo Green?</span>
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 We're committed to providing the highest quality agricultural
@@ -381,7 +398,16 @@ const Home = () => {
         <section className="py-16 bg-green-600 text-white bg-[url('/g5.png')] bg-cover ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center ">
             <h2 className="text-3xl font-bold mb-4 italic">
-              Ready to Boost Your Yield?
+              <ReactTyped
+                strings={[
+                  "Ready to Boost Your Yield?",
+                  "Join us today"
+                ]}
+                typeSpeed={90}
+                backSpeed={30}
+                loop
+              />
+
             </h2>
             <p className="text-xl mb-8 text-green-100">
               Get in touch with our experts and discover the perfect solutions for

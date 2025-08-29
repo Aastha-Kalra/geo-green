@@ -20,11 +20,11 @@ const Products = () => {
   const [sortBy, setSortBy] = useState("name");
 
   const categories = [
-  "All Categories",
-  "Powdered Vermicompost",
-  "EarthWorms Vermicompost",
-  "Enriched Vermicompost",
-  "Organic Vermicompost"
+    "All Categories",
+    "Powdered Vermicompost",
+    "EarthWorms Vermicompost",
+    "Enriched Vermicompost",
+    "Organic Vermicompost"
 
   ];
 
@@ -33,7 +33,7 @@ const Products = () => {
       try {
         const response = await api.get("/api/products");
         const data = response.data;
-  
+
         if (data && data.length > 0) {
           setProducts(data);
           setFilteredProducts(data);
@@ -50,10 +50,10 @@ const Products = () => {
         setLoading(false);
       }
     };
-  
+
     fetchProducts();
   }, []);
-  
+
 
   // Apply filters and search
   useEffect(() => {
@@ -128,15 +128,15 @@ const Products = () => {
 
   return (
     <>
-           <Helmet>
+      <Helmet>
         <title>Products - Geo Green Nursery Vermicompost & Plants in Saharanpur</title>
-        <meta 
-          name="description" 
-          content="Explore Geo Green Nursery products: organic vermicompost, fertilizers, and a wide variety of plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." 
+        <meta
+          name="description"
+          content="Explore Geo Green Nursery products: organic vermicompost, fertilizers, and a wide variety of plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur."
         />
-        <meta 
-          name="keywords" 
-          content="vermicompost, organic fertilizer, indoor plants, outdoor plants, Phoenix plant, Ficus plant, Botalpam plant, Benjamina plant, Geo Green Nursery products, nursery in Saharanpur" 
+        <meta
+          name="keywords"
+          content="vermicompost, organic fertilizer, indoor plants, outdoor plants, Phoenix plant, Ficus plant, Botalpam plant, Benjamina plant, Geo Green Nursery products, nursery in Saharanpur"
         />
 
         {/* Open Graph */}
@@ -152,150 +152,150 @@ const Products = () => {
         <meta name="twitter:description" content="Organic vermicompost, fertilizers, and plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." />
         <meta name="twitter:image" content="https://www.geogreennursery.com/images/products-og-image.jpg" />
       </Helmet>
-    
 
-      <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
-          <h1 className="text-3xl font-bold text-green-800 mb-2">
-            Our Products
-          </h1>
-          <p className="text-gray-600">
-            Discover our comprehensive range of high-quality agricultural
-            products
-          </p>
-        </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-60">
-        {/* Filters Section */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Search */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Search Products
-              </label>
-              <input
-                type="text"
-                placeholder="Search by name, description..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-            </div>
-
-            {/* Category Filter */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Category
-              </label>
-              <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              >
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Price Range */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Price Range
-              </label>
-              <select
-                value={priceRange}
-                onChange={(e) => setPriceRange(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              >
-                <option value="all">All Prices</option>
-                <option value="0-500">Under ₹500</option>
-                <option value="500-1000">₹500 - ₹1000</option>
-                <option value="1000-2000">₹1000 - ₹2000</option>
-                <option value="2000-">Above ₹2000</option>
-              </select>
-            </div>
-
-            {/* Sort By */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Sort By
-              </label>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              >
-                <option value="name">Name A-Z</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="newest">Newest First</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Clear Filters */}
-          <div className="mt-4 flex justify-between items-center">
-            <button
-              onClick={clearFilters}
-              className="text-green-600 hover:text-green-700 font-medium text-sm"
-            >
-              Clear All Filters
-            </button>
-            <span className="text-sm text-gray-500">
-              {filteredProducts.length} product
-              {filteredProducts.length !== 1 ? "s" : ""} found
-            </span>
-          </div>
-        </div>
-
-        {/* Products Grid */}
-        {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-52 md:gap-10">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product._id} product={product} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12">
-            <div className="text-gray-400 mb-4">
-              <svg
-                className="w-16 h-16 mx-auto"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-lg font-medium text-green-800 mb-2">
-              No products found
-            </h3>
-            <p className="text-gray-500 mb-4">
-              Try adjusting your search criteria or filters
+      <div className="min-h-screen bg-gray-50 roboto">
+        {/* Header */}
+        <div className="bg-white shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
+            <h1 className="text-3xl font-bold text-green-800 mb-2">
+              Our <span className="blink">Products</span>
+            </h1>
+            <p className="text-gray-600">
+              Discover our comprehensive range of high-quality agricultural
+              products
             </p>
-            <button
-              onClick={clearFilters}
-              className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
-            >
-              Clear Filters
-            </button>
           </div>
-        )}
+        </div>
 
-        {/* Load More Button (if needed) */}
-        {/* {filteredProducts.length > 0 &&
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-60">
+          {/* Filters Section */}
+          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {/* Search */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Search Products
+                </label>
+                <input
+                  type="text"
+                  placeholder="Search by name, description..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                />
+              </div>
+
+              {/* Category Filter */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Category
+                </label>
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                >
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Price Range */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Price Range
+                </label>
+                <select
+                  value={priceRange}
+                  onChange={(e) => setPriceRange(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                >
+                  <option value="all">All Prices</option>
+                  <option value="0-500">Under ₹500</option>
+                  <option value="500-1000">₹500 - ₹1000</option>
+                  <option value="1000-2000">₹1000 - ₹2000</option>
+                  <option value="2000-">Above ₹2000</option>
+                </select>
+              </div>
+
+              {/* Sort By */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Sort By
+                </label>
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                >
+                  <option value="name">Name A-Z</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="newest">Newest First</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Clear Filters */}
+            <div className="mt-4 flex justify-between items-center">
+              <button
+                onClick={clearFilters}
+                className="text-green-600 hover:text-green-700 font-medium text-sm"
+              >
+                Clear All Filters
+              </button>
+              <span className="text-sm text-gray-500">
+                {filteredProducts.length} product
+                {filteredProducts.length !== 1 ? "s" : ""} found
+              </span>
+            </div>
+          </div>
+
+          {/* Products Grid */}
+          {filteredProducts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-52 md:gap-10">
+              {filteredProducts.map((product) => (
+                <ProductCard key={product._id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <div className="text-gray-400 mb-4">
+                <svg
+                  className="w-16 h-16 mx-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-green-800 mb-2">
+                No products found
+              </h3>
+              <p className="text-gray-500 mb-4">
+                Try adjusting your search criteria or filters
+              </p>
+              <button
+                onClick={clearFilters}
+                className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
+              >
+                Clear Filters
+              </button>
+            </div>
+          )}
+
+          {/* Load More Button (if needed) */}
+          {/* {filteredProducts.length > 0 &&
           filteredProducts.length < products.length && (
             <div className="text-center mt-8">
               <button className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
@@ -303,11 +303,11 @@ const Products = () => {
               </button>
             </div>
           )} */}
+        </div>
       </div>
-    </div>
-    
+
     </>
-    
+
   );
 };
 

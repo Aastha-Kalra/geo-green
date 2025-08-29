@@ -11,34 +11,34 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm"><img src="/v2.png" className="rounded-full"/></span>
+              <span className="text-white font-bold text-sm"><img src="/v2.png" className="rounded-full" /></span>
             </div>
-            <span className="text-xl font-bold text-green-800">Geo Green</span>
+            <span className="text-xl font-bold text-green-800 roboto">Geo Green</span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
               to="/"
-              className="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className=" roboto  text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-md font-medium transition-colors"
             >
               Home
             </Link>
             <Link
               to="/products"
-              className="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className=" roboto  text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-md font-medium transition-colors"
             >
               Products
             </Link>
             <Link
               to="/about"
-              className="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className=" roboto  text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-md font-medium transition-colors"
             >
               About
             </Link>
             <Link
               to="/contact"
-              className="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className=" roboto  text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-md font-medium transition-colors"
             >
               Contact
             </Link>

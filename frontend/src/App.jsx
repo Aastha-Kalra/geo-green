@@ -15,27 +15,29 @@ import Footer from "./components/Footer";
 import AdminProductEdit from './pages/AdminProductEdit';
 import AdminProducts from "./pages/AdminProducts";
 import { HelmetProvider } from "@dr.pogodin/react-helmet";
+import ScrollToTop from "./components/ScrollToTop";
 const App = () => (
   <HelmetProvider>
-  <Router>
-    <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/product/:id" element={<ProductDetails />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/admin" element={<AdminLogin />} />
-      <Route path="/dashboard" element={<AdminDashboard />} />
-      <Route path="/dashboard/products/new" element={<AdminProductNew />} />
-      <Route path="/dashboard/inquiries" element={<AdminInquiries />} />
-      <Route path="/dashboard/products/edit/:id" element={<AdminProductEdit />} />
-      <Route path="/dashboard/products" element={<AdminProducts />} />
+    <Router>
+      <ScrollToTop />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/dashboard" element={<AdminDashboard />} />
+        <Route path="/dashboard/products/new" element={<AdminProductNew />} />
+        <Route path="/dashboard/inquiries" element={<AdminInquiries />} />
+        <Route path="/dashboard/products/edit/:id" element={<AdminProductEdit />} />
+        <Route path="/dashboard/products" element={<AdminProducts />} />
 
-      <Route path="/inquiry/:id" element={<InquiryForm />} />
-    </Routes>
-    <Footer />
-  </Router>
+        <Route path="/inquiry/:id" element={<InquiryForm />} />
+      </Routes>
+      <Footer />
+    </Router>
   </HelmetProvider>
 );
 
