@@ -394,6 +394,51 @@ const Home = () => {
           </div>
         </section>
 
+
+        {/* video section */}
+        <section className="py-16 bg-gray-50 w-full">
+          <div className="mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-6xl font-bold text-green-800 italic mb-4 font">
+                A Glimpse into Our Garden
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Watch a glimpse of our nursery and how we care for our plants and produce with love and dedication.
+              </p>
+            </div>
+
+
+            <div className="w-full max-w-6xl mx-auto flex md:flex-row flex-col gap-6 justify-center items-center">
+              {/* Video 1 */}
+              <div className="bg-black rounded-lg shadow-lg flex items-center justify-center h-[95vh] w-full">
+                <video controls className="h-full rounded-lg object-contain w-full" autoPlay
+                  muted
+                  playsInline
+                  loop>
+                  <source src="/video1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              {/* Video 2 */}
+              <div className="bg-black rounded-lg shadow-lg flex items-center justify-center h-[95vh] w-full">
+                <video controls className="h-full rounded-lg object-contain w-full" autoPlay
+                  muted
+                  playsInline
+                  loop>
+                  <source src="/v3.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </section>
+
+
         {/* CTA Section */}
         <section className="py-16 bg-green-600 text-white bg-[url('/g5.png')] bg-cover ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center ">

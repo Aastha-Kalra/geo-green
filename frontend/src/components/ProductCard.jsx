@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
       : ["/placeholder-product.jpg"];
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden w-80 flex flex-col">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden w-80 flex flex-col roboto">
       <div className="relative">
         <img
           src={productImages[0]}

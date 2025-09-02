@@ -110,7 +110,7 @@ const ProductDetails = () => {
 
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 roboto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="flex mb-8" aria-label="Breadcrumb">
