@@ -61,14 +61,14 @@ const Contact = () => {
         <meta property="og:title" content="Contact Geo Green Nursery - Saharanpur" />
         <meta property="og:description" content="Reach Geo Green Nursery in Saharanpur for organic vermicompost, plants, and gardening advice." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.geogreennursery.com/contact" />
-        <meta property="og:image" content="https://www.geogreennursery.com/images/contact-og-image.jpg" />
+        <meta property="og:url" content="https://www.geogreennursery.co.in/contact" />
+        <meta property="og:image" content="https://www.geogreennursery.co.in/images/contact-og-image.jpg" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact Geo Green Nursery - Saharanpur" />
         <meta name="twitter:description" content="Reach Geo Green Nursery in Saharanpur for organic vermicompost, plants, and gardening advice." />
-        <meta name="twitter:image" content="https://www.geogreennursery.com/images/contact-og-image.jpg" />
+        <meta name="twitter:image" content="https://www.geogreennursery.co.in/images/contact-og-image.jpg" />
       </Helmet>
       <div className="min-h-screen bg-gray-50 roboto">
         {/* Header */}

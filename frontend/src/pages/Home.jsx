@@ -64,14 +64,14 @@ const Home = () => {
         <meta property="og:title" content="Geo Green Nursery - Organic Vermicompost & Plants in Saharanpur" />
         <meta property="og:description" content="High-quality organic vermicompost and a wide variety of plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.geogreennursery.com/" />
-        <meta property="og:image" content="https://www.geogreennursery.com/images/home-og-image.jpg" />
+        <meta property="og:url" content="https://www.geogreennursery.co.in/" />
+        <meta property="og:image" content="https://www.geogreennursery.co.in/images/home-og-image.jpg" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Geo Green Nursery - Organic Vermicompost & Plants in Saharanpur" />
         <meta name="twitter:description" content="High-quality organic vermicompost and a wide variety of plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." />
-        <meta name="twitter:image" content="https://www.geogreennursery.com/images/home-og-image.jpg" />
+        <meta name="twitter:image" content="https://www.geogreennursery.co.in/images/home-og-image.jpg" />
       </Helmet>
 
       <div className="min-h-screen roboto">

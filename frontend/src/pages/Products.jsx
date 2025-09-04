@@ -143,14 +143,14 @@ const Products = () => {
         <meta property="og:title" content="Products - Geo Green Nursery Vermicompost & Plants in Saharanpur" />
         <meta property="og:description" content="Organic vermicompost, fertilizers, and plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.geogreennursery.com/products" />
-        <meta property="og:image" content="https://www.geogreennursery.com/images/products-og-image.jpg" />
+        <meta property="og:url" content="https://www.geogreennursery.co.in/products" />
+        <meta property="og:image" content="https://www.geogreennursery.co.in/images/products-og-image.jpg" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Products - Geo Green Nursery Vermicompost & Plants in Saharanpur" />
         <meta name="twitter:description" content="Organic vermicompost, fertilizers, and plants including indoor, outdoor, Phoenix, Ficus, Botalpam, and Benjamina in Saharanpur." />
-        <meta name="twitter:image" content="https://www.geogreennursery.com/images/products-og-image.jpg" />
+        <meta name="twitter:image" content="https://www.geogreennursery.co.in/images/products-og-image.jpg" />
       </Helmet>
 
 

@@ -48,14 +48,14 @@ const About = () => {
         <meta property="og:title" content="About Geo Green Nursery - Saharanpur" />
         <meta property="og:description" content="Learn about Geo Green Nursery, Saharanpur: organic vermicompost, indoor & outdoor plants, and eco-friendly gardening." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.geogreennursery.com/about" />
-        <meta property="og:image" content="https://www.geogreennursery.com/images/about-og-image.jpg" />
+        <meta property="og:url" content="https://www.geogreennursery.co.in/about" />
+        <meta property="og:image" content="https://www.geogreennursery.co.in/images/about-og-image.jpg" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Geo Green Nursery - Saharanpur" />
         <meta name="twitter:description" content="Learn about Geo Green Nursery, Saharanpur: organic vermicompost, indoor & outdoor plants, and eco-friendly gardening." />
-        <meta name="twitter:image" content="https://www.geogreennursery.com/images/about-og-image.jpg" />
+        <meta name="twitter:image" content="https://www.geogreennursery.co.in/images/about-og-image.jpg" />
       </Helmet>
 
       <div className="min-h-screen bg-gray-50 roboto">
