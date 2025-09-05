@@ -67,6 +67,8 @@ const Home = () => {
         <meta property="og:url" content="https://www.geogreennursery.co.in/" />
         <meta property="og:image" content="https://www.geogreennursery.co.in/images/home-og-image.jpg" />
 
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/v2.png" type="image/png" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Geo Green Nursery - Organic Vermicompost & Plants in Saharanpur" />
@@ -295,6 +297,29 @@ const Home = () => {
                   "/n16.png",
                   "/n17.png",
                   "/n18.png",
+
+                  "/u1.png",
+                  "/u2.png",
+                  "/u3.png",
+                  "/u4.png",
+                  "/u5.png",
+                  "/u6.png",
+                  "/u7.png",
+                  "/u8.png",
+                  "/u9.png",
+                  "/u10.png",
+                  "/u11.png",
+                  "/u12.png",
+                  "/u13.png",
+                  "/u14.png",
+                  "/u15.png",
+                  "/u16.png",
+                  "/u17.png",
+                  "/u18.png",
+                  "/u19.png",
+                  "/u20.png",
+                  "/u21.png",
+                  "/u22.png",
                 ]}
               />
 
